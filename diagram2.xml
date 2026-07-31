@@ -1,0 +1,103 @@
+<mxfile host="app.diagrams.net" modified="2025-11-24T00:00:00.000Z" agent="5.0 (Windows)" etag="67890" version="20.8.3" type="device">
+  <diagram id="diagram-2" name="Flowchart PSO-DT">
+    <mxGraphModel dx="1200" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <!-- Left stage labels with braces simulated by thin rectangles -->
+        <mxCell id="label1" value="Business Understanding" style="text;html=1;align=left;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="20" y="30" width="180" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="label2" value="Data Understanding" style="text;html=1;align=left;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="20" y="80" width="180" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="label3" value="Data Preparation" style="text;html=1;align=left;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="20" y="110" width="180" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="label4" value="Modeling" style="text;html=1;align=left;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="20" y="160" width="180" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="label5" value="Evaluation" style="text;html=1;align=left;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="20" y="420" width="180" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="label6" value="Deployment" style="text;html=1;align=left;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="20" y="520" width="180" height="20" as="geometry"/>
+        </mxCell>
+        <!-- Main flow boxes centered -->
+        <mxCell id="p1" value="Problems Identification" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#000000;fillColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="260" y="20" width="300" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="p2" value="Dataset" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;strokeColor=#000000;fillColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="330" y="90" width="160" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="p3" value="Combination Splitting\nCriteria and\nSplitting Data" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#000000;fillColor=#d8f0ff;" vertex="1" parent="1">
+          <mxGeometry x="220" y="170" width="360" height="80" as="geometry"/>
+        </mxCell>
+        <mxCell id="p4" value="PSO Implementation" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#000000;fillColor=#d8f0ff;" vertex="1" parent="1">
+          <mxGeometry x="260" y="280" width="300" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="p5" value="Parameter Optimization" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#000000;fillColor=#d8f0ff;" vertex="1" parent="1">
+          <mxGeometry x="260" y="350" width="300" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="p6" value="Evaluation and Validation" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#000000;fillColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="260" y="460" width="300" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="p7" value="Best Classification Results" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#000000;fillColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="260" y="560" width="300" height="50" as="geometry"/>
+        </mxCell>
+        <!-- Side note: Splitting Criteria -->
+        <mxCell id="side1" value="Splitting Criteria:\n- GR, IG, GI" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#000000;fillColor=#ffd8d8;" vertex="1" parent="1">
+          <mxGeometry x="600" y="160" width="200" height="70" as="geometry"/>
+        </mxCell>
+        <!-- Side note: Splitting Data ratios -->
+        <mxCell id="side2" value="Splitting Data\n(Training:Testing):\n1. 70 : 30\n2. 80 : 20\n3. 90 : 10" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#000000;fillColor=#ffd8d8;" vertex="1" parent="1">
+          <mxGeometry x="600" y="260" width="200" height="110" as="geometry"/>
+        </mxCell>
+        <!-- Side note: Final evaluation outputs -->
+        <mxCell id="side3" value="1. Confusion Matrix\n2. ROC Curve" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#000000;fillColor=#ffd8d8;" vertex="1" parent="1">
+          <mxGeometry x="600" y="540" width="200" height="70" as="geometry"/>
+        </mxCell>
+        <!-- Braces: draw thin rectangles to simulate bracket grouping -->
+        <mxCell id="brace1" value="" style="rounded=0;strokeColor=#000000;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="200" y="140" width="10" height="320" as="geometry"/>
+        </mxCell>
+        <!-- Connectors -->
+        <mxCell id="e1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" edge="1" parent="1" source="p1" target="p2">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" edge="1" parent="1" source="p2" target="p3">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" edge="1" parent="1" source="p3" target="p4">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" edge="1" parent="1" source="p4" target="p5">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" edge="1" parent="1" source="p5" target="p6">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" edge="1" parent="1" source="p6" target="p7">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <!-- Arrows from side boxes to main boxes -->
+        <mxCell id="slink1" style="edgeStyle=elbowEdgeStyle;rounded=0;html=1;endArrow=block;endSize=8;" edge="1" parent="1" source="side1" target="p3">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="slink2" style="edgeStyle=elbowEdgeStyle;rounded=0;html=1;endArrow=block;endSize=8;" edge="1" parent="1" source="side2" target="p4">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="slink3" style="edgeStyle=elbowEdgeStyle;rounded=0;html=1;endArrow=block;endSize=8;" edge="1" parent="1" source="side3" target="p7">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <!-- Small arrows linking labels grouping to left of main flow (visual only) -->
+        <mxCell id="groupLine1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" edge="1" parent="1" source="label4" target="p3">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="groupLine2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" edge="1" parent="1" source="label5" target="p6">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

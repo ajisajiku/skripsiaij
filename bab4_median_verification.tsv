@@ -1,0 +1,6 @@
+Atribut	Jumlah Data Valid	Posisi Tengah 1	Nilai Tengah 1	Posisi Tengah 2	Nilai Tengah 2	Perhitungan Median	Median SimpleImputer
+Glucose	609	305	118			Median = nilai ke-305 = 118	118
+BloodPressure	590	295	72	296	72	Median = (72 + 72) / 2 = 72	72
+SkinThickness	438	219	28	220	29	Median = (28 + 29) / 2 = 28.5000	28.5000
+Insulin	324	162	120	163	120	Median = (120 + 120) / 2 = 120	120
+BMI	607	304	32			Median = nilai ke-304 = 32	32

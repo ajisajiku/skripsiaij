@@ -1,0 +1,105 @@
+<mxfile host="app.diagrams.net" modified="2025-11-24T00:00:00.000Z" agent="5.0 (Windows)" etag="12345" version="20.8.3" type="device">
+  <diagram id="diagram-1" name="Flowchart BGWO-DT">
+    <mxGraphModel dx="1192" dy="742" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <!-- Dataset (ellipse) -->
+        <mxCell id="dataset" value="Dataset" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;container=0;strokeColor=#000000;fillColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="240" y="20" width="200" height="60" as="geometry"/>
+        </mxCell>
+        <!-- Preprocessing -->
+        <mxCell id="preproc" value="Preprocessing" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#000000;fillColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="210" y="110" width="260" height="50" as="geometry"/>
+        </mxCell>
+        <!-- BGWO Group (dashed rectangle) -->
+        <mxCell id="bgwoGroup" value="" style="rounded=0;dashed=1;strokeColor=#000000;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="120" y="180" width="440" height="540" as="geometry"/>
+        </mxCell>
+        <mxCell id="bgwoLabel" value="BGWO" style="text;html=1;align=center;verticalAlign=top;" vertex="1" parent="bgwoGroup">
+          <mxGeometry x="0" y="-18" width="440" height="18" as="geometry"/>
+        </mxCell>
+        <!-- Steps inside BGWO -->
+        <mxCell id="step1" value="Generate random position for n wolf" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#000000;fillColor=#ffffff;" vertex="1" parent="bgwoGroup">
+          <mxGeometry x="80" y="20" width="280" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="step2" value="Find the alpha, beta and delta solutions based on fitness" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#000000;fillColor=#ffffff;" vertex="1" parent="bgwoGroup">
+          <mxGeometry x="80" y="90" width="280" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="step3" value="Update each wolf position to a binary position" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#000000;fillColor=#ffffff;" vertex="1" parent="bgwoGroup">
+          <mxGeometry x="80" y="180" width="280" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="iterInc" value="iter = iter + 1" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#000000;fillColor=#ffffff;" vertex="1" parent="bgwoGroup">
+          <mxGeometry x="80" y="250" width="280" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="updateAC" value="Update \u0302A and \u0302C" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#000000;fillColor=#ffffff;" vertex="1" parent="bgwoGroup">
+          <mxGeometry x="80" y="310" width="280" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="evaluate" value="Evaluate positions of individual wolves" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#000000;fillColor=#ffffff;" vertex="1" parent="bgwoGroup">
+          <mxGeometry x="80" y="370" width="280" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="updateAlpha" value="Update the alpha, beta and delta solutions" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#000000;fillColor=#ffffff;" vertex="1" parent="bgwoGroup">
+          <mxGeometry x="80" y="440" width="280" height="50" as="geometry"/>
+        </mxCell>
+        <!-- Decision diamond iter < iter_max -->
+        <mxCell id="decision" value="iter &lt; iter_max ?" style="rhombus;whiteSpace=wrap;html=1;strokeColor=#000000;fillColor=#ffffff;" vertex="1" parent="bgwoGroup">
+          <mxGeometry x="160" y="510" width="120" height="80" as="geometry"/>
+        </mxCell>
+        <mxCell id="yesLabel" value="Yes" style="text;html=1;align=center;verticalAlign=middle;" vertex="1" parent="bgwoGroup">
+          <mxGeometry x="80" y="540" width="60" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="noLabel" value="No" style="text;html=1;align=center;verticalAlign=middle;" vertex="1" parent="bgwoGroup">
+          <mxGeometry x="360" y="540" width="60" height="20" as="geometry"/>
+        </mxCell>
+        <!-- After decision: Display X* and fitness -->
+        <mxCell id="display" value="Display X* and fitness" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#000000;fillColor=#ffffff;" vertex="1" parent="bgwoGroup">
+          <mxGeometry x="80" y="610" width="280" height="50" as="geometry"/>
+        </mxCell>
+        <!-- Decision Tree final box -->
+        <mxCell id="dt" value="Decision Tree" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#000000;fillColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="210" y="740" width="260" height="50" as="geometry"/>
+        </mxCell>
+        <!-- Edges -->
+        <mxCell id="e1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="dataset" target="preproc">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="preproc" target="bgwoGroup">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="bgwoGroup" source="step1" target="step2">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="bgwoGroup" source="step2" target="step3">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="bgwoGroup" source="step3" target="iterInc">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="bgwoGroup" source="iterInc" target="updateAC">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="bgwoGroup" source="updateAC" target="evaluate">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="bgwoGroup" source="evaluate" target="updateAlpha">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="bgwoGroup" source="updateAlpha" target="decision">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <!-- Decision yes goes back to step3 -->
+        <mxCell id="eYes" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="bgwoGroup" source="decision" target="step3">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <!-- Decision no goes to display -->
+        <mxCell id="eNo" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="bgwoGroup" source="decision" target="display">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <!-- From display to Decision Tree -->
+        <mxCell id="eFinal" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="bgwoGroup" target="dt">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -1,0 +1,21 @@
+## Distribusi Kelas Outcome
+
+Subset	Tidak Diabetes	Diabetes	Total	Persentase Tidak Diabetes	Persentase Diabetes
+Dataset Penuh	500	268	768	65.10%	34.90%
+Training	401	213	614	65.31%	34.69%
+Testing	99	55	154	64.29%	35.71%
+
+## Parameter Train-Test Split
+
+Parameter	Nilai
+test_size	0.2
+random_state	42
+stratify	Tidak digunakan / None
+Kode aktual	train_test_split(X, y, test_size=0.2, random_state=42)
+
+## Selisih Distribusi Kelas
+
+Perbandingan	Selisih Tidak Diabetes	Selisih Diabetes	Selisih Absolut Diabetes
+Training - Dataset Penuh	0.21%	-0.21%	0.21%
+Testing - Dataset Penuh	-0.82%	0.82%	0.82%
+Testing - Training	-1.02%	1.02%	1.02%

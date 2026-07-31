@@ -1,0 +1,85 @@
+## Ruang Pencarian Parameter
+
+Parameter	Nilai/Rentang	Jumlah Nilai	Status
+criterion	['gini', 'entropy']	2	Dicari RandomizedSearchCV
+max_depth	1 sampai 20	20	Dicari RandomizedSearchCV
+min_samples_leaf	1 sampai 50	50	Dicari RandomizedSearchCV
+min_samples_split	2	1	Tidak dicari; memakai default DecisionTreeClassifier
+
+## Konfigurasi RandomizedSearchCV
+
+Konfigurasi	Nilai
+Jumlah kombinasi mungkin	2000
+n_iter	100
+cv	5
+scoring	recall
+random_state	42
+n_jobs pada aplikasi utama	-1
+n_jobs pada script verifikasi	1
+
+## Kombinasi yang Dicoba
+
+No	criterion	max_depth	min_samples_split	min_samples_leaf	Mean Recall CV	Rank
+1	entropy	18	2	11	0.633776	23
+2	gini	8	2	4	0.558472	66
+3	entropy	7	2	34	0.629790	24
+4	gini	19	2	6	0.544518	71
+5	entropy	6	2	40	0.666999	5
+6	entropy	6	2	24	0.577741	56
+7	gini	19	2	39	0.619712	32
+8	entropy	15	2	32	0.639313	17
+9	gini	2	2	16	0.506645	89
+10	entropy	7	2	24	0.573422	57
+
+## Best Parameter
+
+Parameter	Nilai
+criterion	entropy
+max_depth	4
+min_samples_split	2
+min_samples_leaf	30
+best_score_ recall CV	0.723367
+
+## Confusion Matrix
+
+Komponen	Jumlah	Keterangan
+TN	75	Aktual Tidak Diabetes, prediksi Tidak Diabetes
+FP	24	Aktual Tidak Diabetes, prediksi Diabetes
+FN	17	Aktual Diabetes, prediksi Tidak Diabetes
+TP	38	Aktual Diabetes, prediksi Diabetes
+
+## Metrik Evaluasi
+
+Metrik	Hasil Program	Hasil Manual	Sama
+Accuracy	0.733766	0.733766	Ya
+Precision	0.612903	0.612903	Ya
+Recall	0.690909	0.690909	Ya
+F1-Score	0.649573	0.649573	Ya
+
+## 10 Data Testing Pertama
+
+No	Index Dataset	Outcome Aktual	Prediksi RandomizedSearch	Status
+1	668	Tidak Diabetes	Tidak Diabetes	Benar
+2	324	Tidak Diabetes	Tidak Diabetes	Benar
+3	624	Tidak Diabetes	Tidak Diabetes	Benar
+4	690	Tidak Diabetes	Tidak Diabetes	Benar
+5	473	Tidak Diabetes	Tidak Diabetes	Benar
+6	204	Tidak Diabetes	Diabetes	Salah
+7	97	Tidak Diabetes	Tidak Diabetes	Benar
+8	336	Tidak Diabetes	Diabetes	Salah
+9	568	Tidak Diabetes	Diabetes	Salah
+10	148	Tidak Diabetes	Diabetes	Salah
+
+## Perhitungan Manual Metrik
+
+Metrik	Rumus	Substitusi	Perhitungan	Hasil
+Accuracy	Accuracy = (TP + TN) / (TP + TN + FP + FN)	(38 + 75) / (38 + 75 + 24 + 17)	113 / 154	0.733766
+Precision	Precision = TP / (TP + FP)	38 / (38 + 24)	38 / 62	0.612903
+Recall	Recall = TP / (TP + FN)	38 / (38 + 17)	38 / 55	0.690909
+F1-Score	F1 = 2 x (Precision x Recall) / (Precision + Recall)	2 x (0.612903 x 0.690909) / (0.612903 + 0.690909)	0.846921 / 1.303812	0.649573
+
+## Perbandingan dengan Baseline
+
+Metrik	Baseline	RandomizedSearch	Perubahan
+Recall	0.654545	0.690909	0.036364
+Accuracy	0.727273	0.733766	0.006494

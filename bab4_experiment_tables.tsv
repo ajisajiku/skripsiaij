@@ -1,0 +1,176 @@
+
+## 10 Data Awal Sebelum Preprocessing
+Pregnancies	Glucose	BloodPressure	SkinThickness	Insulin	BMI	DiabetesPedigreeFunction	Age	Outcome
+6	148	72	35	0	33.6	0.627	50	1
+1	85	66	29	0	26.6	0.351	31	0
+8	183	64	0	0	23.3	0.672	32	1
+1	89	66	23	94	28.1	0.167	21	0
+0	137	40	35	168	43.1	2.288	33	1
+5	116	74	0	0	25.6	0.201	30	0
+3	78	50	32	88	31.0	0.248	26	1
+10	115	0	0	0	35.3	0.134	29	0
+2	197	70	45	543	30.5	0.158	53	1
+8	125	96	0	0	0.0	0.232	54	1
+
+
+## Missing Value Setelah Nilai 0 Dianggap Missing
+Atribut	Jumlah Missing Value
+Glucose	5
+BloodPressure	35
+SkinThickness	227
+Insulin	374
+BMI	11
+
+
+## Median Tiap Atribut
+Atribut	Median Data Training
+Glucose	118.0
+BloodPressure	72.0
+SkinThickness	28.5
+Insulin	120.0
+BMI	32.0
+
+
+## 10 Data Training Setelah Imputasi Median
+Pregnancies	Glucose	BloodPressure	SkinThickness	Insulin	BMI	DiabetesPedigreeFunction	Age
+2.0	84.0	72.0	28.5	120.0	32.0	0.304	21.0
+9.0	112.0	82.0	24.0	120.0	28.2	1.282	50.0
+1.0	139.0	46.0	19.0	83.0	28.7	0.654	22.0
+0.0	161.0	50.0	28.5	120.0	21.9	0.254	65.0
+6.0	134.0	80.0	37.0	370.0	46.2	0.238	46.0
+1.0	130.0	70.0	13.0	105.0	25.9	0.472	22.0
+4.0	132.0	72.0	28.5	120.0	32.9	0.302	23.0
+10.0	161.0	68.0	23.0	132.0	25.5	0.326	47.0
+1.0	108.0	60.0	46.0	178.0	35.5	0.415	24.0
+1.0	80.0	55.0	28.5	120.0	19.1	0.258	21.0
+
+
+## 10 Data Training Setelah StandardScaler
+Pregnancies	Glucose	BloodPressure	SkinThickness	Insulin	BMI	DiabetesPedigreeFunction	Age
+-0.5263968613802872	-1.2572009663765735	-0.018995259566860982	-0.008140242832159363	-0.2045160495567258	-0.050246767119990716	-0.4907347899245463	-1.035940379394779
+1.5880458584444552	-0.3263340464426379	0.8081741995858075	-0.5436519320049251	-0.2045160495567258	-0.5985898777110256	2.41502990958509	1.4871008455407202
+-0.8284601070695361	0.5712876263508	-2.169635853363799	-1.1386649199746648	-0.6222267044007156	-0.5264394684227315	0.549160552435753	-0.9489389578452792
+-1.130523352758785	1.3026830634417494	-1.8387680697027315	-0.008140242832159363	-0.2045160495567258	-1.5076850347435307	-0.639291267404589	2.79212216878322
+0.6818561213767085	0.4050613906483115	0.6427403077552738	1.0033818367163982	2.617853239929692	1.9988248566675606	-0.6868293401982027	1.1390951593427203
+-0.8284601070695361	0.27208040208632067	-0.18442915139739469	-1.8526805055383526	-0.3738582069259109	-0.9304817604371782	0.008414974408397297	-0.9489389578452792
+0.07772962999821068	0.3385708963673161	-0.018995259566860982	-0.008140242832159363	-0.2045160495567258	0.07962396959893836	-0.496677049023748	-0.8619375362957792
+1.8901091041337041	1.3026830634417494	-0.3498630432279284	-0.662654529598873	-0.06904232366137776	-0.9882020878678133	-0.4253699398333274	1.2260965808922204
+-0.8284601070695361	-0.4593150350046287	-1.0115986105500632	2.0744052150619297	0.4502736256041231	0.4548060978980676	-0.16093940991885142	-0.7749361147462792
+-0.8284601070695361	-1.3901819549385643	-1.4251833401263974	-0.008140242832159363	-0.2045160495567258	-1.9117273267579769	-0.6274067492061856	-1.035940379394779
+
+
+## Rumus StandardScaler
+Metode	Rumus	Keterangan
+StandardScaler	z = (x - mean) / standard deviation	mean dan standard deviation dihitung dari data training
+
+
+## Contoh Perhitungan Manual StandardScaler
+Atribut	Nilai x	Mean Training	Standard Deviation Training	Perhitungan	Hasil z	Nilai dari StandardScaler
+Glucose	84.0	121.81596091205212	30.079487626423745	(84.0000 - 121.8160) / 30.0795	-1.2572009663765735	-1.2572009663765735
+
+
+## Jumlah Data Training dan Testing
+Subset	Jumlah Data
+Training	614
+Testing	154
+
+
+## Parameter Decision Tree Baseline
+Parameter	Nilai
+ccp_alpha	0.0
+class_weight	None
+criterion	gini
+max_depth	None
+max_features	None
+max_leaf_nodes	None
+min_impurity_decrease	0.0
+min_samples_leaf	1
+min_samples_split	2
+min_weight_fraction_leaf	0.0
+monotonic_cst	None
+random_state	42
+splitter	best
+
+
+## 10 Contoh Data Testing dan Prediksi
+Nomor	Nilai Aktual	Prediksi Baseline	Prediksi RandomizedSearch	Prediksi GWO
+1	Tidak Diabetes	Tidak Diabetes	Tidak Diabetes	Diabetes
+2	Tidak Diabetes	Tidak Diabetes	Tidak Diabetes	Tidak Diabetes
+3	Tidak Diabetes	Tidak Diabetes	Tidak Diabetes	Tidak Diabetes
+4	Tidak Diabetes	Tidak Diabetes	Tidak Diabetes	Tidak Diabetes
+5	Tidak Diabetes	Tidak Diabetes	Tidak Diabetes	Tidak Diabetes
+6	Tidak Diabetes	Diabetes	Diabetes	Diabetes
+7	Tidak Diabetes	Tidak Diabetes	Tidak Diabetes	Tidak Diabetes
+8	Tidak Diabetes	Diabetes	Diabetes	Diabetes
+9	Tidak Diabetes	Diabetes	Diabetes	Diabetes
+10	Tidak Diabetes	Diabetes	Diabetes	Diabetes
+
+
+## Confusion Matrix
+Model	TN	FP	FN	TP
+Baseline DT	76	23	19	36
+RandomizedSearch DT	75	24	17	38
+GWO DT	66	33	13	42
+
+
+## Metrik Evaluasi
+Model	Accuracy	Precision	Recall	F1-Score
+Baseline DT	0.7272727272727273	0.6101694915254238	0.6545454545454545	0.631578947368421
+RandomizedSearch DT	0.7337662337662337	0.6129032258064516	0.6909090909090909	0.6495726495726496
+GWO DT	0.7012987012987013	0.56	0.7636363636363637	0.6461538461538462
+
+
+## Perhitungan Manual Metrik
+Model	Accuracy Manual	Precision Manual	Recall Manual	F1-Score Manual
+Baseline DT	(36 + 76) / (36 + 76 + 23 + 19) = 0.7273	36 / (36 + 23) = 0.6102	36 / (36 + 19) = 0.6545	2 * (0.6102 * 0.6545) / (0.6102 + 0.6545) = 0.6316
+RandomizedSearch DT	(38 + 75) / (38 + 75 + 24 + 17) = 0.7338	38 / (38 + 24) = 0.6129	38 / (38 + 17) = 0.6909	2 * (0.6129 * 0.6909) / (0.6129 + 0.6909) = 0.6496
+GWO DT	(42 + 66) / (42 + 66 + 33 + 13) = 0.7013	42 / (42 + 33) = 0.5600	42 / (42 + 13) = 0.7636	2 * (0.5600 * 0.7636) / (0.5600 + 0.7636) = 0.6462
+
+
+## Parameter Terbaik RandomizedSearch
+Parameter	Nilai
+min_samples_leaf	30
+max_depth	4
+criterion	entropy
+
+
+## 10 Contoh Iterasi RandomizedSearch
+Kombinasi Parameter	Mean Recall CV	Std Recall CV	Rank
+{'min_samples_leaf': 11, 'max_depth': 18, 'criterion': 'entropy'}	0.6337763012181616	0.05034510761332789	23
+{'min_samples_leaf': 4, 'max_depth': 8, 'criterion': 'gini'}	0.5584717607973422	0.07527326560514758	66
+{'min_samples_leaf': 34, 'max_depth': 7, 'criterion': 'entropy'}	0.6297895902547066	0.08027807630382751	24
+{'min_samples_leaf': 6, 'max_depth': 19, 'criterion': 'gini'}	0.5445182724252492	0.06034736362911557	71
+{'min_samples_leaf': 40, 'max_depth': 6, 'criterion': 'entropy'}	0.6669988925802879	0.09727760327591387	5
+{'min_samples_leaf': 24, 'max_depth': 6, 'criterion': 'entropy'}	0.5777408637873754	0.04700941241209327	56
+{'min_samples_leaf': 39, 'max_depth': 19, 'criterion': 'gini'}	0.6197120708748616	0.06801342376742756	32
+{'min_samples_leaf': 32, 'max_depth': 15, 'criterion': 'entropy'}	0.6393133997785162	0.0965601407746873	17
+{'min_samples_leaf': 16, 'max_depth': 2, 'criterion': 'gini'}	0.5066445182724253	0.15874698375035698	89
+{'min_samples_leaf': 24, 'max_depth': 7, 'criterion': 'entropy'}	0.573421926910299	0.06281481408978606	57
+
+
+## Parameter GWO
+Parameter	Nilai
+Jumlah wolf	10
+Jumlah iterasi	50
+Fungsi fitness	1 - mean recall 5-fold CV
+Dimensi	2
+Lower bound	[1, 1]
+Upper bound	[20, 50]
+
+
+## Perkembangan Fitness GWO
+Iterasi	Best Fitness (1 - Recall)	Best Recall CV	Max Depth	Min Samples Leaf
+1	0.3089700996677742	0.6910299003322258	4	9
+10	0.2538205980066446	0.7461794019933554	4	22
+20	0.2538205980066446	0.7461794019933554	4	22
+30	0.2538205980066446	0.7461794019933554	4	22
+40	0.2538205980066446	0.7461794019933554	4	22
+50	0.2538205980066446	0.7461794019933554	4	22
+
+
+## Parameter Terbaik GWO
+Parameter	Nilai
+criterion	gini
+max_depth	4
+min_samples_leaf	22
+random_state	42

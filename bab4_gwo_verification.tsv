@@ -1,0 +1,90 @@
+## Parameter GWO
+
+Parameter	Nilai
+File fungsi fitness	gwo_optimizer.py::calculate_fitness
+File fungsi optimizer	gwo_optimizer.py::run_gwo
+Training model GWO	"app.py membuat DecisionTreeClassifier(max_depth=gwo_depth, min_samples_leaf=gwo_leaf, criterion=""gini"", random_state=42)"
+Jumlah wolf / population size	10
+Jumlah iterasi aktual aplikasi	20
+Dimensi	2
+Lower bound	[1, 1]
+Upper bound	[20, 50]
+Fungsi fitness	1 - mean recall 5-fold cross-validation
+Parameter DT yang dioptimasi	max_depth dan min_samples_leaf
+Criterion pada fitness dan model final	gini
+random_state Decision Tree	42
+Seed GWO eksplisit pada aplikasi	Tidak ada
+
+## Contoh Perhitungan Fitness
+
+Komponen	Nilai
+Best recall CV	0.708638
+Rumus fitness	fitness = 1 - recall CV
+Substitusi	fitness = 1 - 0.708638
+Fitness	0.291362
+
+## Perkembangan Fitness
+
+Iterasi	Best Fitness	Best Recall CV	max_depth	min_samples_leaf	Keterangan
+1	0.370875	0.629125	10	15	Aktual dari run_gwo aplikasi
+10	0.309856	0.690144	6	13	Aktual dari run_gwo aplikasi
+20	0.291362	0.708638	6	11	Aktual dari run_gwo aplikasi
+30	Tidak dijalankan	Tidak dijalankan	Tidak dijalankan	Tidak dijalankan	Aplikasi memakai MAX_ITERATIONS=20
+40	Tidak dijalankan	Tidak dijalankan	Tidak dijalankan	Tidak dijalankan	Aplikasi memakai MAX_ITERATIONS=20
+50	Tidak dijalankan	Tidak dijalankan	Tidak dijalankan	Tidak dijalankan	Aplikasi memakai MAX_ITERATIONS=20
+
+## Parameter Terbaik GWO
+
+Parameter	Nilai
+criterion	gini
+max_depth	6
+min_samples_leaf	11
+random_state	42
+min_samples_split	2
+Best fitness	0.291362
+Best recall CV	0.708638
+
+## 10 Data Testing Pertama
+
+No	Index Dataset	Outcome Aktual	Prediksi GWO	Status
+1	668	Tidak Diabetes	Diabetes	Salah
+2	324	Tidak Diabetes	Tidak Diabetes	Benar
+3	624	Tidak Diabetes	Tidak Diabetes	Benar
+4	690	Tidak Diabetes	Tidak Diabetes	Benar
+5	473	Tidak Diabetes	Tidak Diabetes	Benar
+6	204	Tidak Diabetes	Diabetes	Salah
+7	97	Tidak Diabetes	Tidak Diabetes	Benar
+8	336	Tidak Diabetes	Diabetes	Salah
+9	568	Tidak Diabetes	Diabetes	Salah
+10	148	Tidak Diabetes	Diabetes	Salah
+
+## Confusion Matrix
+
+Komponen	Jumlah	Keterangan
+TN	78	Aktual Tidak Diabetes, prediksi Tidak Diabetes
+FP	21	Aktual Tidak Diabetes, prediksi Diabetes
+FN	19	Aktual Diabetes, prediksi Tidak Diabetes
+TP	36	Aktual Diabetes, prediksi Diabetes
+
+## Metrik Evaluasi
+
+Metrik	Hasil Program	Hasil Manual	Sama
+Accuracy	0.740260	0.740260	Ya
+Precision	0.631579	0.631579	Ya
+Recall	0.654545	0.654545	Ya
+F1-Score	0.642857	0.642857	Ya
+
+## Perhitungan Manual
+
+Metrik	Rumus	Substitusi	Perhitungan	Hasil
+Accuracy	Accuracy = (TP + TN) / (TP + TN + FP + FN)	(36 + 78) / (36 + 78 + 21 + 19)	114 / 154	0.740260
+Precision	Precision = TP / (TP + FP)	36 / (36 + 21)	36 / 57	0.631579
+Recall	Recall = TP / (TP + FN)	36 / (36 + 19)	36 / 55	0.654545
+F1-Score	F1 = 2 x (Precision x Recall) / (Precision + Recall)	2 x (0.631579 x 0.654545) / (0.631579 + 0.654545)	0.826794 / 1.286124	0.642857
+
+## Perbandingan Model
+
+Model	Accuracy	Precision	Recall	F1-Score	False Negative
+Baseline	0.727273	0.610169	0.654545	0.631579	19
+RandomizedSearch	0.733766	0.612903	0.690909	0.649573	17
+GWO	0.740260	0.631579	0.654545	0.642857	19
